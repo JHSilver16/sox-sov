@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/SOV.png" type="image/png">
+    <title>Search for Outstanding Volunteers 2025</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="images/SOV.png" alt="Organization Logo" class="hero-logo">
+            </div>
+            <h1 class="hero-title">Search for Outstanding Volunteers 2025</h1>
+            <p class="hero-subtitle">Celebrating exceptional individuals and organizations making a difference in our communities</p>
+            <div class="hero-stats">
+                 <p class="hero-subtitle stat-number">SOCCSKSARGEN REGION</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="category-nav">
+        <div class="container">
+            <button class="nav-btn active" data-category="all">All Nominees</button>
+            <button class="nav-btn" data-category="adult">Adult Category</button>
+            <button class="nav-btn" data-category="youth">Youth Category</button>
+            <button class="nav-btn" data-category="organization">Organization Category</button>
+        </div>
+    </nav>
+
+    <!-- Nominees Section -->
+    <section class="nominees-section">
+        <div class="container">
+            <div class="nominees-grid" id="nomineesGrid">
+                <!-- Nominee cards will be dynamically generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/pnvsa.png" alt="Organization Logo">
+                        <img src="images/depdev.png" alt="Organization Logo">
+                        
+                    </div>
+                    <p class="footer-description">
+                        <h3>Outstanding Volunteers 2025</h3>
+                        Recognizing and celebrating the extraordinary contributions of volunteers who make our communities stronger, safer, and more vibrant.
+                    </p>
+                    <div class="social-links" style="display:none">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#nomineesGrid">View Nominees</a></li>
+                        <li><a href="https://pnvsca.gov.ph/?page_id=3370">About the Awards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section" style="display: none;">
+                    <h4>Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="#nominate">Nominate Someone</a></li>
+                        <li><a href="#volunteer">Become a Volunteer</a></li>
+                        <li><a href="#sponsor">Sponsorship</a></li>
+                        <li><a href="#events">Upcoming Events</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+
+                 <div class="footer-section">
+                    <h4>Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span>DEPARTMENT OF ECONOMY, PLANNING, AND DEVELOPMENT</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span> PRGC, Brgy. Carpenter Hill
+                                        <br>Koronadal City, South Cotabato </span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>(083) 500-6150 to 500-6154</span>
+                            </div>
+                            <div class="contact-item">
+                                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Search for Outstanding Volunteers. All rights reserved.</p>
+                    <div class="footer-bottom-links" style="display: none;">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#accessibility">Accessibility</a>
+                    </div>
+                </div>
+
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="" alt="" class="modal-image" id="modalImage">
+                    <div class="modal-info">
+                        <h2 class="modal-name" id="modalName"></h2>
+                        <span class="modal-category" id="modalCategory"></span>
+                        <p class="modal-location" id="modalLocation"></p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-summary">
+                        <h3>Summary</h3>
+                        <p id="modalSummary"></p>
+                    </div>
+                    <div class="modal-gallery">
+                        <h3>Gallery</h3>
+                        <div class="gallery-grid" id="modalGallery">
+                            <!-- Gallery images will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="modal-summary">
+                        <h3>Social/Media Links</h3>
+                        <ul id="socials" style="padding-left: 50px;">
+                            
+                        </ul>
+                        
+                        
+                    </div>
+                  <div class="modal-summary">
+                        <h3>News Articles</h3>
+                        <ul id="news" style="padding-left: 50px;">
+                            
+                        </ul>
+                        
+                        
+                    </div>
+                  
+                    <div class="modal-pdf-section">
+                      <h3>Nominee Narrative</h3>
+                      <div class="pdf-viewer-container">
+                          <iframe id="pdfViewer" class="pdf-iframe" src="" frameborder="0"></iframe>
+                          <div class="pdf-placeholder" id="pdfPlaceholder">
+                              <i class="fas fa-file-pdf"></i>
+                              <span>PDF document will be displayed here</span>
+                          </div>
+                      </div>
+                  </div>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <div class="modal-actions">
+                        <a href="#" class="download-btn" id="downloadBtn" download>
+                            <i class="fas fa-download"></i>
+                            Download Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="./script.js"></script>
+
+<script src="https://static.app/js/static.js" type="text/javascript"></script>
+</body>
+
+</html>

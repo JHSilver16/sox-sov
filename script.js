@@ -20,6 +20,14 @@ const nomineesData = [
             "images/yambok/lib4.jpg",
             "images/yambok/solar14.jpg",
         ],
+         visit: [
+            "images/yambok/542870328_1494435528220335_8207557649320842918_n.jpg",
+            "images/yambok/545605111_804759748732836_9149491938046149760_n.jpg",
+            "images/yambok/546156863_804759718732839_2660432708655544359_n.jpg",
+            "images/yambok/546596673_2050719835734502_3400494101985712163_n.jpg",
+            "images/yambok/546920397_804759648732846_3535047759954724095_n.jpg",
+            "images/yambok/548061786_1104937485157026_2520899628162355082_n.jpg",
+        ],
         socials: [{link:"https://www.facebook.com/LakeSebuYouthNetwork", name:"Lake Sebu Youth Network Inc."}, 
                 {link:"https://www.facebook.com/profile.php?id=100071713140592", name:"Tboli Community Library and Culture Hub"},
                  {link:"https://www.facebook.com/watch/?v=859563268378405&rdid=NSlaK54opbR2XJpV", name:"We Care, We Share Community Outreach | Sitio Takul, Brgy. Talisay"},
@@ -46,6 +54,16 @@ const nomineesData = [
         preview: "A young leader of exceptional caliber, she serves as the SK Chairperson of Barangay Poblacion, Lake Sebu, while also excelling as a youth advocate, beauty queen, student leader, and academic achiever—using her platform to champion volunteerism and uplift marginalized communities, especially children facing educational inequality.",
         summary: "Ms. Princess Shianne Balleza Andres, 24 years old, a resident of Purok Ilang-ilang, Brgy. Poblacion, Lake Sebu, South Cotabato, is the CY 2025 Search for Outstanding Volunteers (SOV) Regional Winner in the Individual - Youth Category. Princess is a young leader of exceptional caliber. She is the Sangguniang Kabataan (SK) Chairperson of Barangay Poblacion, Lake Sebu, South Cotabato. Beyond her role as a public servant, she still wears different hats: a youth advocate, a beauty queen, a student leader, and an academic achiever. This truly defines her embodiment of service and volunteerism beyond personal achievements. She has consistently used her platform and influence to uplift marginalized communities, particularly children who are most vulnerable to educational inequality.",
         gallery: [
+            "images/princess/1.jpg",
+            "images/princess/2.jpg",
+            "images/princess/3.jpg",
+            "images/princess/4.jpg",
+            "images/princess/5.jpg",
+            "images/princess/6.jpg",
+            "images/princess/7.jpg",
+            "images/princess/8.jpg",
+        ],
+        visit: [
             "images/princess/1.jpg",
             "images/princess/2.jpg",
             "images/princess/3.jpg",
@@ -90,6 +108,14 @@ const nomineesData = [
             "images/mahintana/7.png",
             "images/mahintana/8.png",
         ],
+        gallery: [
+            "images/mahintana/9.png",
+            "images/mahintana/10.JPEG",
+            "images/mahintana/11.JPEG",
+            "images/mahintana/12.JPEG",
+            "images/mahintana/13.JPEG",
+            "images/mahintana/14.jpg",
+        ],
          socials: [{link:"https://mahintana.org/", name:"Official Website"},
                   {link:"https://www.facebook.com/Mahintana/", name:"Facebook Page"},
                   {link:"https://nedasapasig-my.sharepoint.com/:v:/g/personal/rrrivera_depdev_gov_ph/ETdfzJ47jg1Bk9RXocNZyQ4B8eQRtxhg3k6mfuL5DZ7SOQ?e=DHJTp3&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D", name:"Environment Disaster Risk Reduction and Climate Change Adaption 2024 Accomplishments"},
@@ -119,6 +145,7 @@ const modalCategory = document.getElementById('modalCategory');
 const modalLocation = document.getElementById('modalLocation');
 const modalSummary = document.getElementById('modalSummary');
 const modalGallery = document.getElementById('modalGallery');
+const sovGallery = document.getElementById('sovGallery');
 const downloadBtn = document.getElementById('downloadBtn');
 const pdfViewer = document.getElementById('pdfViewer');
 const pdfPlaceholder = document.getElementById('pdfPlaceholder');
@@ -222,6 +249,16 @@ function openModal(nominee) {
         img.className = 'gallery-image';
         img.onclick = () => openImageFullscreen(imageUrl);
         modalGallery.appendChild(img);
+    });
+
+     sovGallery.innerHTML = '';
+    nominee.visit.forEach(imageUrl => {
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.alt = `${nominee.name} gallery image`;
+        img.className = 'gallery-image';
+        img.onclick = () => openImageFullscreen(imageUrl);
+        sovGallery.appendChild(img);
     });
     socials.innerHTML = '';
     //console.log(nominee.socials)

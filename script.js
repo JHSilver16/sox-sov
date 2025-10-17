@@ -108,7 +108,7 @@ const nomineesData = [
             "images/mahintana/7.png",
             "images/mahintana/8.png",
         ],
-        gallery: [
+        visit: [
             "images/mahintana/9.png",
             "images/mahintana/10.JPEG",
             "images/mahintana/11.JPEG",
@@ -252,6 +252,7 @@ function openModal(nominee) {
     });
 
      sovGallery.innerHTML = '';
+    console.log(nominee.visit)
     nominee.visit.forEach(imageUrl => {
         const img = document.createElement('img');
         img.src = imageUrl;
